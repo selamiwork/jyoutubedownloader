@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jyoutubedownloader" />
+        <module name="app_ilter_R2020" />
+        <module name="app_ilter_9914-v2" />
+        <module name="app_toKML" />
+        <module name="app_ilter_9914-R2020" />
+        <module name="app_ilter_Detection" />
+        <module name="app_ilter_9914" />
+        <module name="app_ilter_R2020_2" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="app_ilter_9914" options="-parameters" />
+      <module name="app_ilter_9914-R2020" options="-parameters" />
+      <module name="app_ilter_9914-v2" options="-parameters" />
+      <module name="app_ilter_Detection" options="-parameters" />
+      <module name="app_ilter_R2020" options="-parameters" />
+      <module name="app_ilter_R2020_2" options="-parameters" />
+      <module name="app_toKML" options="-parameters" />
+      <module name="jyoutubedownloader" options="" />
+    </option>
+  </component>
+</project>
