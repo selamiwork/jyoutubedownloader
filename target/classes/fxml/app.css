@@ -1,0 +1,328 @@
+.root {
+
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * ListViews                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.list-cell {
+    -fx-background-color: transparent;
+    /*-fx-padding: 0 0 0 0;*/
+}
+.list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+#node-powerlistview .list-cell {
+    -fx-background-color: transparent;
+    /*-fx-padding: 0 0 0 0;*/
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Button                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+/*#buttonPlay {
+    -fx-background-image: url("/icons/playIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:left;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+}*/
+/*******************************************************************************
+ *                                                                             *
+ * ComboBoxes                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+ .combo-box .list-cell
+ {
+     /*-fx-background: transparent;
+     -fx-background-color: transparent;*/
+     -fx-text-fill: #092f57;
+     -fx-padding: 2 2 2 5;
+     -fx-cell-size: 3.0em;
+ }
+
+ .combo-box-popup .list-view
+ {
+     -fx-background-color: white;
+     -fx-background-insets: 0, 1;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+ }
+
+ .combo-box-popup .list-view .list-cell
+ {
+     -fx-padding: 4 0 4 5;
+
+     /* No alternate highlighting */
+     -fx-background-color: white;
+     -fx-text-fill: -fx-text-inner-color;
+     -fx-cell-size: 2.5em;
+     -fx-font-size:10.0px;
+ }
+
+
+ .combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+ {
+     -fx-background: -fx-accent;
+     -fx-background-color: -fx-selection-bar;
+     -fx-text-fill: gold;
+ }
+
+ .combo-box-popup .list-view .list-cell:filled:hover
+ {
+     -fx-background-color: white;
+     -fx-text-fill: -fx-text-inner-color;
+ }
+
+ .combo-box-base
+ {
+     -fx-alignment: CENTER;
+     -fx-background-color: transparent;
+     -fx-background-radius: 5, 5, 5, 5;
+     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+     -fx-padding: 0;
+     -fx-border-color: #D3D3D3;
+ 	-fx-border-width: 1 1 1 1;
+ 	-fx-font-family:Tahoma;
+ 	-fx-font-size:10px;
+ 	-fx-text-fill: #FFFFFF;
+ 	-fx-opacity: 1;
+ }
+
+#node-comboboxLanguage  .combo-box-popup .list-view {
+    -fx-min-width: 130;
+    -fx-min-height: 140;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Spinner                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.spinner {
+    /*-fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background; */
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 3, 3, 2;
+    -fx-opacity: 1;
+}
+
+.spinner > .text-field {
+    /*-fx-background-color: -fx-text-box-border, -fx-control-inner-background;*/
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 1 0, 1 0 2 1;
+    -fx-background-radius: 3 0 0 3, 2 0 0 2;
+    -fx-border-color: #D3D3D3;
+	-fx-border-width: 1 1 1 1;
+	-fx-font-family:Tahoma;
+	-fx-font-size:10px;
+	-fx-text-fill: black;
+    -fx-padding: 10;
+    -fx-alignment: LEFT;
+}
+
+#node-spinnerAttenuation .spinner {
+    /*-fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background; */
+    -fx-background-color: transparent;
+    /*-fx-background-insets: 0, 0 0 1 0, 1 1 2 1; */
+    -fx-background-radius: 3, 3, 2;
+    -fx-opacity: 1;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TextField                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.text-field {
+    /*-fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background; */
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 3, 3, 2;
+    -fx-opacity: 1;
+    -fx-border-color: #D3D3D3;
+    -fx-border-width: 1 1 1 1;
+}
+
+.password-field {
+    /*-fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background; */
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 3, 3, 2;
+    -fx-opacity: 1;
+    -fx-border-color: #D3D3D3;
+	-fx-border-width: 1 1 1 1;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TextArea                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.text-area {
+    /*-fx-background-color: rgba(53,89,119,0.4);*/
+    -fx-background-color: transparent;
+    -fx-inner-background: transparent;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 3, 3, 2;
+    -fx-opacity: 1;
+    -fx-border-color: #D3D3D3;
+    -fx-border-width: 1 1 1 1;
+}
+
+.text-area .content {
+    -fx-background-color: transparent ;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Accordion                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+}
+
+.accordion .titled-pane .title {
+    -fx-background-color: transparent ;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ProgressBar                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+/* A bright blue for highlighting/accenting objects.  For example: selected
+ * text; selected items in menus, lists, trees, and tables; progress bars */
+.root {
+    -fx-accent: #0096C9;
+}
+.progress-bar {
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+}
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to right, #7DB8FF 20%, #418DEA 40%, #0F6DDE 60%, #1869CB 80%, #1675A9 100%);    /*-fx-background-radius: 0.583em; *//* 7 */
+    -fx-background-radius: 2;
+    -fx-padding: 0.75em;
+}
+.progress-bar:indeterminate > .bar {
+    -fx-background-color: linear-gradient(to left, transparent, -fx-accent);
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ScrollBar                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-bar:horizontal {
+    -fx-pref-width: 25;
+    -fx-padding: 2.5;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 25;
+    -fx-padding: 2.5;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Slider                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+.slider .track {
+    -fx-padding: 0.55em; /* 2.5 */
+}
+
+.slider > .thumb {
+    -fx-padding: 1.0em; /* 7 */
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * DatePicker                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+.date-picker > .text-field {
+    -fx-background-color: transparent;
+    /*-fx-background-insets: 0 0 1 0, 1 0 2 1; */
+    -fx-background-radius: 3 0 0 3, 2 0 0 2;
+    -fx-border-color: #D3D3D3;
+    /*-fx-border-width: 1 1 1 1;*/
+    -fx-font-family:Tahoma;
+    -fx-font-size:15px;
+    -fx-text-fill: #092f57;
+    /*-fx-padding: 10;*/
+    -fx-alignment: CENTER;
+}
+
+.date-picker-popup {
+    -fx-padding: 1;
+    -fx-font-size: 2em;
+}
+
+.date-picker > .arrow-button {
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-font-size: 1em;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+}
+
+.date-picker-popup > * > .spinner > .left-button {
+    -fx-background-image: url("/icons/icons8_chevron_left_80px.png"); /* Url of the icon */
+    -fx-background-size: 90% 90%; /* Can be `cover` or `100% 100%` ect. */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center; /* Put the icon in the center */
+}
+.date-picker-popup > * > .spinner > .right-button {
+    -fx-background-image: url("/icons/icons8_chevron_right_80px.png"); /* Url of the icon */
+    -fx-background-size: 90% 90%; /* Can be `cover` or `100% 100%` ect. */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center; /* Put the icon in the center */
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * DatePicker                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+.alert.information.dialog-pane {
+    -fx-graphic: url("/images/background_3.png");
+}
+
+.alert.error.dialog-pane {
+    -fx-graphic: url("/images/background_3.png");
+}
+
+.alert.warning.dialog-pane {
+    -fx-graphic: url("/images/background_3.png");
+}

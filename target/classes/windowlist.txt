@@ -1,0 +1,60 @@
+Handle   Lev   Pid -Window status-   Left    Top  Width Height Image                 Caption
+0xAD4098C  1 14652 Res Ina Ena Hid    809    467    366    145 YouTubeDownloaderHD   Information
+0xEF1098E  3 14652 Res Ina Ena Vis      0      0    360    116 YouTubeDownloaderHD   DirectUIHWND
+0x0580912  4 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x01F08FA  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   ScrollBar
+0x0140924  4 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x0100944  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   ScrollBar
+0x0100910  4 14652 Res Ina Ena Hid     52     15      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x01E082E  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   ScrollBar
+0x01607A8  4 14652 Res Ina Ena Hid     52     15      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x0560868  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   ScrollBar
+0x011079E  4 14652 Res Ina Ena Hid     52     15      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x03A06EE  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   SysLink
+0x0170604  4 14652 Res Ina Ena Hid     52     25      0      0 YouTubeDownloaderHD   CtrlNotifySink
+0x01A0088  5 14652 Res Ina Ena Vis      0      0      0      0 YouTubeDownloaderHD   SysLink
+0x0180880  4 14652 Res Ina Ena Vis    282     84     68     23 YouTubeDownloaderHD   CtrlNotifySink
+0x026006A  5 14652 Res Ina Ena Vis      0      0     68     23 YouTubeDownloaderHD   OK
+0x01A092A  1 14652 Min Ina Dis Hid     64   1052    160     28 YouTubeDownloaderHD   YouTube Downloader HD
+0x0170926  2 14652 Res Ina Ena Vis      0      0    692     73 YouTubeDownloaderHD   TPanel
+0x01E08F6  2 14652 Res Ina Ena Vis      0    367    692     39 YouTubeDownloaderHD   TPanel
+0x00F0902  2 14652 Res Ina Ena Vis      0     73    692    294 YouTubeDownloaderHD   TPanel
+0x01A08B4  3 14652 Res Ina Ena Vis    102    176    328     20 YouTubeDownloaderHD   Download lower resolution if selected is not available
+0x016089E  3 14652 Res Ina Ena Vis    102    234    419     21 YouTubeDownloaderHD   C:\Users\selami.work\Documents
+0x01A0932  3 14652 Res Ina Ena Vis    102    202    442     21 YouTubeDownloaderHD   Convert to <B>MP4</B> - compatible with iPhone, iPad, Android and most media players
+0x01E098A  3 14652 Res Ina Ena Vis    102    146    261     22 YouTubeDownloaderHD   THTMLComboBox
+0x01208DC  3 14652 Res Ina Ena Hid     85    267    161     20 YouTubeDownloaderHD   <B>Work through proxy</B>
+0x012090E  3 14652 Res Ina Ena Vis    265    105    313     21 YouTubeDownloaderHD   https://www.youtube.com/watch?v=tO01J-M3g0U
+0x012093E  3 14652 Res Ina Ena Vis    102     81    536     21 YouTubeDownloaderHD   TEdit
+0x01B090C  2 14652 Res Ina Ena Vis      0    406    692     41 YouTubeDownloaderHD   TPanel
+0x01008A4  2 14652 Res Ina Ena Vis      0    447    692     19 YouTubeDownloaderHD   TStatusBar
+0x0CF08D4  1 14652 Res Ina Ena Hid    713    469    430    141 YouTubeDownloaderHD   Checking for Update
+0x01907A4  2 14652 Res Ina Ena Hid     82     42    145     33 YouTubeDownloaderHD   Go to Download Page
+0x0150850  2 14652 Res Ina Ena Hid    162     42    105     33 YouTubeDownloaderHD   Close
+0x02908C6  1 14652 Res Ina Ena Hid      0      0    430    141 YouTubeDownloaderHD   UpdateForm
+0x0130948  1 14652 Res Ina Dis Vis    960    540      0      0 YouTubeDownloaderHD   YouTube Downloader HD
+0x0180942  1 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   TPUtilWindow
+0x01108AC  1 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   TPUtilWindow
+0x023088C  1 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   TPUtilWindow
+0x0090918  1 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   TPUtilWindow
+0x01B0976  1 14652 Res Ina Ena Hid      0      0      0      0 YouTubeDownloaderHD   TPUtilWindow
+
+
+0x01A092A  1 14652 Res Ina Ena Vis    857    246    708    505 YouTubeDownloaderHD   YouTube Downloader HD
+0x0170926  2 14652 Res Ina Ena Vis      0      0    692     73 YouTubeDownloaderHD   TPanel
+0x01E08F6  2 14652 Res Ina Ena Vis      0    367    692     39 YouTubeDownloaderHD   TPanel
+0x00F0902  2 14652 Res Ina Ena Vis      0     73    692    294 YouTubeDownloaderHD   TPanel
+0x01A08B4  3 14652 Res Ina Ena Vis    102    176    328     20 YouTubeDownloaderHD   Download lower resolution if selected is not available
+0x016089E  3 14652 Res Ina Ena Vis    102    234    419     21 YouTubeDownloaderHD   C:\Users\selami.work\Documents
+0x01A0932  3 14652 Res Ina Ena Vis    102    202    442     21 YouTubeDownloaderHD   Convert to <B>MP4</B> - compatible with iPhone, iPad, Android and most media players
+0x01E098A  3 14652 Res Ina Ena Vis    102    146    261     22 YouTubeDownloaderHD   THTMLComboBox
+0x01208DC  3 14652 Res Ina Ena Hid     85    267    161     20 YouTubeDownloaderHD   <B>Work through proxy</B>
+0x012090E  3 14652 Res Ina Ena Vis    265    105    313     21 YouTubeDownloaderHD   https://www.youtube.com/watch?v=tO01J-M3g0U
+0x012093E  3 14652 Res Ina Ena Vis    102     81    536     21 YouTubeDownloaderHD   TEdit
+0x01B090C  2 14652 Res Ina Ena Vis      0    406    692     41 YouTubeDownloaderHD   TPanel
+0x01008A4  2 14652 Res Ina Ena Vis      0    447    692     19 YouTubeDownloaderHD   TStatusBar
+0x0CF08D4  1 14652 Res Ina Ena Hid    713    469    430    141 YouTubeDownloaderHD   Checking for Update
+0x01907A4  2 14652 Res Ina Ena Hid     82     42    145     33 YouTubeDownloaderHD   Go to Download Page
+0x0150850  2 14652 Res Ina Ena Hid    162     42    105     33 YouTubeDownloaderHD   Close
+0x02908C6  1 14652 Res Ina Ena Hid      0      0    430    141 YouTubeDownloaderHD   UpdateForm
+0x0130948  1 14652 Res Ina Ena Vis    960    540      0      0 YouTubeDownloaderHD   YouTube Downloader HD

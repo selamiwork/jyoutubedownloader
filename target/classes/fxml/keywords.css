@@ -1,0 +1,75 @@
+.code-area {
+    -fx-alignment: LEFT;
+    -fx-background-color: transparent;
+    -fx-inner-background: transparent;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 3, 3, 2;
+    -fx-padding: 0;
+    -fx-border-color: #D3D3D3;
+    -fx-border-width: 1 1 1 1;
+    /*-fx-font-family: monospace; */
+    -fx-font-family:Tahoma;
+    -fx-font-size:11px;
+    -fx-opacity: 1;
+}
+
+.keyword {
+    -fx-fill: purple;
+    -fx-font-weight: bold;
+}
+.debug {
+    -fx-fill: purple;
+}
+.success {
+    -fx-fill: green;
+    -fx-font-weight: bold;
+}
+.error {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.semicolon {
+    -fx-font-weight: bold;
+}
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.bracket {
+    -fx-fill: darkgreen;
+    -fx-font-weight: bold;
+}
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+.string {
+    -fx-fill: blue;
+}
+
+.comment {
+	-fx-fill: cadetblue;
+}
+
+.paragraph-box:has-caret {
+    -fx-background-color: #f2f9fc;
+}
+
+.underline {
+    -rtfx-underline-color: red;
+    -rtfx-underline-width: 0.8;
+}
+
+.time {
+    -fx-fill: red;
+}
+
+.digit {
+    -fx-fill: #1675A9;
+   /* -fx-font-weight: bold;*/
+}
+
+.unit {
+    -fx-fill: #092f57;
+    /*-fx-font-weight: bold;*/
+}
