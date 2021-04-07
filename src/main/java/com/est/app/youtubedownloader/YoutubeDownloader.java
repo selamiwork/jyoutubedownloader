@@ -83,7 +83,7 @@ public class YoutubeDownloader implements Runnable {
 	private String windowNotifySinkImage = "YouTubeDownloaderHD";
 	private String windowNotifySinkCaption = "Information";
 
-	private ProgressbarTool progressbarTool = new ProgressbarTool(0);
+	private ProgressbarTool progressbarTool;
 
 	public YoutubeDownloader(){
 	}
@@ -260,6 +260,7 @@ public class YoutubeDownloader implements Runnable {
 							progressbarTool.addProgress(1);
 							if(++ i >= downloadList.size()) {
 								System.out.println("Download all completed.");
+								removeUnprintableCharsFromFileName();
 								shutdownDownloader = true;
 							}
 							break;
@@ -296,6 +297,29 @@ public class YoutubeDownloader implements Runnable {
 		}
 		shutdownDownloader = true; // set this to true, so the launching thread can
 		progressbarTool.setProcessing(false);
+	}
+
+	private void removeUnprintableCharsFromFileName(){
+		// Creates an array in which we will store the names of files and directories
+		String[] pathnames;
+
+		// Creates a new File instance by converting the given pathname string
+		// into an abstract pathname
+		File f = new File(savePath);
+
+		// Populates the array with names of files and directories
+		pathnames = f.list();
+
+		// For each pathname in the pathnames array
+		for (String pathname : pathnames) {
+			String rename = pathname.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "");
+			//System.out.println(pathname  + " / " + rename );
+			try {
+				new File(savePath + fileSeparator + pathname).renameTo(new File(savePath + fileSeparator + rename));
+			} catch (Exception e) {
+				//e.printStackTrace();
+			}
+		}
 	}
 
 	public void setX_Current(int x_Current) {
@@ -353,7 +377,7 @@ public class YoutubeDownloader implements Runnable {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		new YoutubeDownloader();
+		new YoutubeDownloader().removeUnprintableCharsFromFileName();
 	}
 	
 }

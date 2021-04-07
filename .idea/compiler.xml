@@ -9,12 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jyoutubedownloader" />
         <module name="app_ilter_R2020" />
+        <module name="app_ilter_9914" />
+        <module name="app_ilter_9914-R2020" />
+        <module name="app_ilter_R2020_2" />
+        <module name="app_ilter_Detection" />
         <module name="app_ilter_9914-v2" />
         <module name="app_toKML" />
-        <module name="app_ilter_9914-R2020" />
-        <module name="app_ilter_Detection" />
-        <module name="app_ilter_9914" />
-        <module name="app_ilter_R2020_2" />
       </profile>
     </annotationProcessing>
   </component>
