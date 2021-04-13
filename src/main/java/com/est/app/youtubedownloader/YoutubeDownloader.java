@@ -14,10 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.est.app.items.ProgressbarTool;
-import com.est.app.utils.ClipBoard;
-import com.est.app.utils.RuntimeUtils;
-import com.est.app.utils.TextUtils;
-import com.est.app.utils.TimeUtils;
+import com.est.app.utils.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -236,6 +233,18 @@ public class YoutubeDownloader implements Runnable {
 						if(link.contains("&list=")){
 							link = link.substring(0, link.indexOf("&list="));
 						}
+						String videoFile = Options.getVideoFile(link.substring(link.indexOf("watch?v=")));
+						if(!videoFile.isEmpty()){
+							if(new File(savePath + fileSeparator + videoFile).exists()){
+								if(++ i >= downloadList.size()) {
+									System.out.println("Download all completed.");
+									//removeUnprintableCharsFromFileName();
+									shutdownDownloader = true;
+								}
+								continue;
+							}
+						}
+						List<String> videoFileListBefore = getVideoFileList();
 						System.out.println("Downloading: " + (i + 1) + "/" + downloadList.size() + " "+ link);
 						write(window, link, X_videoURL, Y_videoURL);
 						click(window.getLeft() + X_Download, window.getTop() + Y_Download);
@@ -268,6 +277,13 @@ public class YoutubeDownloader implements Runnable {
 									System.out.println("completed: " + link);
 									progressbarTool.addProgress(1);
 									removeUnprintableCharsFromFileName();
+									List<String> videoFileListAfter = getVideoFileList();
+									for(String saveFile : videoFileListAfter){
+										if(!videoFileListBefore.contains(saveFile)){
+											Options.setVideoFile(link.substring(link.indexOf("watch?v=")), saveFile);
+											break;
+										}
+									}
 									if(++ i >= downloadList.size()) {
 										System.out.println("Download all completed.");
 										//removeUnprintableCharsFromFileName();
@@ -317,6 +333,19 @@ public class YoutubeDownloader implements Runnable {
 		}
 		shutdownDownloader = true; // set this to true, so the launching thread can
 		progressbarTool.setProcessing(false);
+	}
+
+	private List<String> getVideoFileList(){
+		String[] pathnames;
+
+		// Creates a new File instance by converting the given pathname string
+		// into an abstract pathname
+		File f = new File(savePath);
+
+		// Populates the array with names of files and directories
+		pathnames = f.list();
+
+		return new ArrayList<>(Arrays.asList(pathnames));
 	}
 
 	private void removeUnprintableCharsFromFileName(){

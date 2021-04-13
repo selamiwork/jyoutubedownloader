@@ -102,5 +102,13 @@ public class Options {
 		getPreferences().put(ApplicationName + ".system.settings.link", link);
 	}
 
+	public synchronized static String getVideoFile(String link) {
+		String directory = getPreferences().get(ApplicationName + ".system.settings.file." + link,"");
+		return directory;
+	}
+
+	public synchronized static void setVideoFile(String link, String file) {
+		getPreferences().put(ApplicationName + ".system.settings.file." + link, file);
+	}
 
 }
