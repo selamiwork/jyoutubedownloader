@@ -16,6 +16,7 @@ import java.util.List;
 import com.est.app.items.ProgressbarTool;
 import com.est.app.utils.ClipBoard;
 import com.est.app.utils.RuntimeUtils;
+import com.est.app.utils.TextUtils;
 import com.est.app.utils.TimeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,7 +117,8 @@ public class YoutubeDownloader implements Runnable {
 	}
 
 	private void closeApp(){
-		List<WindowStatus> windows = cmdowNativeInterfaceLib.getWindows(windowCaption);
+		//List<WindowStatus> windows = cmdowNativeInterfaceLib.getWindows(windowCaption);
+		List<WindowStatus> windows = cmdowNativeInterfaceLib.getWindowsContains(windowCaption);
 		for(WindowStatus window : windows) {
 			cmdowNativeInterfaceLib.closeApp(window.Handle);
 		}
@@ -220,7 +222,7 @@ public class YoutubeDownloader implements Runnable {
 				TimeUtils.waitInMilis(wait);
 			}
 
-			int i = 0;
+			int i = 0, timeout = 0;
 			while(!shutdownDownloader)
 			{
 				window = cmdowNativeInterfaceLib.getWindow(windowCaption);
@@ -230,17 +232,20 @@ public class YoutubeDownloader implements Runnable {
 					TimeUtils.waitInMilis(200);
 					window = cmdowNativeInterfaceLib.getWindow(windowCaption);
 					if(window != null) {
-						progressbarTool.setTotalProgress(downloadList.size()); //update total
 						String link = downloadList.get(i);
-						System.out.println("Downloading: " + link);
+						if(link.contains("&list=")){
+							link = link.substring(0, link.indexOf("&list="));
+						}
+						System.out.println("Downloading: " + (i + 1) + "/" + downloadList.size() + " "+ link);
 						write(window, link, X_videoURL, Y_videoURL);
 						click(window.getLeft() + X_Download, window.getTop() + Y_Download);
 
 						cmdowNativeInterfaceLib.hideApp(window.Handle);
 
+						timeout = 0;
 						while(!shutdownDownloader) {
 							List<WindowStatus> windows = cmdowNativeInterfaceLib.getWindows(windowCaption);
-							if(windows.get(1).statusEnableState.toLowerCase().equals("ena")) {
+							if(timeout ++ > 10 || windows.get(1).statusEnableState.toLowerCase().equals("ena")) {
 								break;
 							}
 							TimeUtils.waitInMilis(500);
@@ -253,17 +258,32 @@ public class YoutubeDownloader implements Runnable {
 							if(windowNotify == null){
 								continue;
 							}
-							cmdowNativeInterfaceLib.setOnTop(windowNotify.Handle);
-							TimeUtils.waitInMilis(200);
-							click(windowNotify.getLeft() + X_DownloadComplete, windowNotify.getTop() + Y_DownloadComplete);
-							System.out.println("completed: " + link);
-							progressbarTool.addProgress(1);
-							if(++ i >= downloadList.size()) {
-								System.out.println("Download all completed.");
-								removeUnprintableCharsFromFileName();
-								shutdownDownloader = true;
+							boolean completed = false;
+							int offset = 0;
+							timeout = 0;
+							while(timeout ++ < 20 && !shutdownDownloader) {
+								windowNotify = cmdowNativeInterfaceLib.getWindow(windowNotifySinkImage, windowNotifySinkCaption);
+								if(windowNotify == null){
+									completed = true;
+									System.out.println("completed: " + link);
+									progressbarTool.addProgress(1);
+									removeUnprintableCharsFromFileName();
+									if(++ i >= downloadList.size()) {
+										System.out.println("Download all completed.");
+										//removeUnprintableCharsFromFileName();
+										shutdownDownloader = true;
+									}
+									break;
+								}
+								cmdowNativeInterfaceLib.closeWindow(windowNotify.Handle);
+								//cmdowNativeInterfaceLib.setOnTop(windowNotify.Handle);
+								TimeUtils.waitInMilis(250);
+								//click(offset + windowNotify.getLeft() + X_DownloadComplete, offset + windowNotify.getTop() + Y_DownloadComplete);
+								//offset += 2;
 							}
-							break;
+							if(completed){
+								break;
+							}
 						}
 
 					}
@@ -312,12 +332,16 @@ public class YoutubeDownloader implements Runnable {
 
 		// For each pathname in the pathnames array
 		for (String pathname : pathnames) {
-			String rename = pathname.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "");
+			//String rename = pathname.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "");
+			String rename = TextUtils.cleanUnprintableChars(pathname, true);
 			//System.out.println(pathname  + " / " + rename );
 			try {
-				new File(savePath + fileSeparator + pathname).renameTo(new File(savePath + fileSeparator + rename));
+				if(!pathname.equals(rename)){
+					boolean renameTo = new File(savePath + fileSeparator + pathname).renameTo(new File(savePath + fileSeparator + rename));
+					System.out.println("renameTo = " + renameTo);
+				}
 			} catch (Exception e) {
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 	}

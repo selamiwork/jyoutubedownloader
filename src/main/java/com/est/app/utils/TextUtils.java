@@ -221,6 +221,21 @@ public class TextUtils {
         return strUTF_8;
     }
 
+    public static String cleanUnprintableChars(String text, boolean multilanguage)
+    {
+        String regex = multilanguage ? "[^\\x00-\\xFF]" : "[^\\x00-\\x7F]";
+        // strips off all non-ASCII characters
+        text = text.replaceAll(regex, "");
+
+        // erases all the ASCII control characters
+        text = text.replaceAll("[\\p{Cntrl}&&[^\r\n\t]]", "");
+
+        // removes non-printable characters from Unicode
+        text = text.replaceAll("\\p{C}", "");
+
+        return text.trim();
+    }
+
     public static void main(String[] args) {
         try {
             testUTF8();

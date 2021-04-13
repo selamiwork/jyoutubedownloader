@@ -307,6 +307,11 @@ public class CmdowNativeInterfaceLib {
     	return result.length() == 0;
     }
 
+    public boolean closeWindow(String handle) {
+        String result = run(handle + " /CLS");
+        return result.length() == 0;
+    }
+
     public WindowStatus getWindow(String caption) {
         List<WindowStatus> windows = getWindows(caption);
         if(windows.isEmpty()) {
@@ -330,9 +335,15 @@ public class CmdowNativeInterfaceLib {
 	}
 
     public List<WindowStatus> getWindows(String image, String caption) {
+        List<WindowStatus> windowsAll = getWindows(caption);
+        List<WindowStatus> windows = windowsAll.stream().filter(window -> window.Image.equals(image) && window.Caption.equals(caption)).collect(Collectors.toList());
+        return windows;
+    }
+
+    public List<WindowStatus> getWindowsContains(String caption) {
         String table = getWindowsListAll();
         List<WindowStatus> windowsAll = list(table);
-        List<WindowStatus> windows = windowsAll.stream().filter(window -> window.Image.equals(image) && window.Caption.equals(caption)).collect(Collectors.toList());
+        List<WindowStatus> windows = windowsAll.stream().filter(window ->BlankRemover.removeAllBlanks(window.Caption.toLowerCase()).equals(BlankRemover.removeAllBlanks(caption.toLowerCase()))).collect(Collectors.toList());
         return windows;
     }
 

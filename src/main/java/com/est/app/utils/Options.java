@@ -82,8 +82,6 @@ public class Options {
 	public synchronized static String getDefaultDirectory() {
 		String directory = getPreferences().get(ApplicationName + ".system.settings.directory",
 				System.getProperty("user.home") + fileSeparator + "videos" + fileSeparator + ApplicationName);
-		if(!new File(directory).exists())
-			return System.getProperty("user.home");
 		return directory;
 	}
 
